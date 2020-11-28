@@ -1,9 +1,13 @@
 <template>
+<div>
   <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link to="/">Inicio</router-link> |
+    <router-link to="/recibo">Recibo Actual</router-link> |
+    <router-link to="/recibos">Historial de recibos</router-link> |
+    <router-link to="/estado">Estado del servicio</router-link> 
   </div>
   <router-view/>
+</div>
 </template>
 
 <style>
