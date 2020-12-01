@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import {db} from '../firebase.js'
+//import {db} from '../firebase.js'
 export default {
     name: "recibo",
     data(){
@@ -21,9 +21,11 @@ export default {
     },
     methods: {
         async mostrarUltimoRecibo(){ //este. acano jjsjsjs x2
-            const lastRec = await db.collection("Tickets").get();
-            this.recAux=lastRec.get(lastRec.size()-1)
-            console.log(this.recAux)
+            /*const lastRec = await db.collection("Tickets");
+            const last= lastRec.collection("Tickets").where("Pagado","==", false).get()
+
+            this.recAux=lastRec.get()*
+            console.log(this.recAux)*/
         }       
     },
 }
