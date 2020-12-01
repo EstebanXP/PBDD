@@ -7,7 +7,7 @@
 </template>
 
 <script>
-//import {db} from '../firebase.js'
+import {db} from '../firebase.js'
 export default {
     name: "recibo",
     data(){
@@ -21,11 +21,20 @@ export default {
     },
     methods: {
         async mostrarUltimoRecibo(){ //este. acano jjsjsjs x2
-            /*const lastRec = await db.collection("Tickets");
-            const last= lastRec.collection("Tickets").where("Pagado","==", false).get()
+           var ref = db.database().ref("Tickets");
+            ref.orderByChild("FechaPago").limitToFirst(1).on("child_added", function(snapshot) {
+            // This will be called exactly two times (unless there are less than two
+            // dinosaurs in the Database).
 
-            this.recAux=lastRec.get()*
-            console.log(this.recAux)*/
+            // It will also get fired again if one of the first two dinosaurs is
+            // removed from the data set, as a new dinosaur will now be the second
+        // shortest.
+            console.log(snapshot.key);
+        });
+
+
+
+
         }       
     },
 }

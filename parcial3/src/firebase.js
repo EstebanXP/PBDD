@@ -11,6 +11,10 @@ storageBucket: "otro-5f042.appspot.com",
 messagingSenderId: "690655601016",
 appId: "1:690655601016:web:c3fdaf127222c25434288d"
 };
+
+
+
+
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
