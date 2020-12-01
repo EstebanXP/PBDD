@@ -4,7 +4,7 @@
         <form @submit.prevent="contra">
             <p>Numero de Contrato</p>
             <input type="text" v-model="contrato" style="margin-bottom: 20px" required> 
-            <hr  style="border:0px"/>
+            <hr/>
             <button type="submit">Ingresar</button>
         </form>
         <h2 style="color:crimson">{{warningContrato}}</h2>

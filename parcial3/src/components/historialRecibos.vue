@@ -1,18 +1,14 @@
 
 <template>
     <div>
-        <h3>
             Todos los recibos
             <ul>
                 <li v-for="rec in recibos" :key="rec.id">
-                
-                Recibo pagado:
-                {{rec.Pagado}}
-                Saldo Pagado: {{rec.Saldo}} 
-                Watts Usados en el semestre: {{rec.Wattage}}
+                <p class="pListas">Recibo pagado:</p>{{rec.Pagado}} <hr/>
+                <p class="pListas">Saldo Pagado:</p> {{rec.Saldo}} <hr>
+                <p class="pListas">Watts Usados en el semestre:</p> {{rec.Wattage}}<hr>
                 </li>
             </ul>
-        </h3>
         <form @submit.prevent="exit">
             <button type="submit">Cerrar Sesión</button>
         </form>
