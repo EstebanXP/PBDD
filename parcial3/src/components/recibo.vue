@@ -7,8 +7,25 @@
 </template>
 
 <script>
+import {db} from '../firebase.js'
 export default {
-    name: "recibo"
+    name: "recibo",
+    data(){
+        return{
+            recAux:[],
+        }
+        
+    },
+     created() {
+        this.mostrarUltimoRecibo();
+    },
+    methods: {
+        async mostrarUltimoRecibo(){ //este. acano jjsjsjs x2
+            const lastRec = await db.collection("Tickets").get();
+            this.recAux=lastRec.get(lastRec.size()-1)
+            console.log(this.recAux)
+        }       
+    },
 }
 </script>
 
