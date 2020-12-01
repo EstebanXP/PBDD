@@ -1,37 +1,45 @@
 <template>
     <div>
         <h1>Ingresa a tu cuenta</h1>
-        <ul>
-            <li>ya</li>
-            <li v-for="libro in usuarios" :key="libro.Status">
-                ID: {{libro.Contraseña}} ||
-                
-               
-                
-                
-
-            </li>
-        </ul>
+        <form @submit.prevent="contra">
+            <input type="text" v-model="contrato">
+            <button type="submit">Registrar</button>
+        </form>
     </div>
 </template>
 
 <script>
+
 import {db} from '../firebase.js'
 export default {
      name:"usuario",
         data(){
             return {
-            usuarios: []
+            usuarios: [],
+            contrato: ''
             }
         },
         created(){
-            this.contra();
+            
         },
     methods: {
-            async contra(){
-                const data = await db.collection("Usuario").get();
-                this.usuarios = data.docs.map(doc => ({id: doc.id, ...doc.data()}))
-                console.log(this.usuarios)
+            contra(){
+                const refUsuarios = db.collection('Usuario');
+                // eslint-disable-next-line no-unused-vars
+                const query = refUsuarios.where('noContrato','==',this.contrato).get()
+                    .then(snapshot => {
+                        if (snapshot.empty) {
+                            console.log('No matching documents.');
+                            return;
+                        }
+                        snapshot.forEach(doc => {
+                            console.log(doc.id, '=>', doc.data());
+                        });
+                    })
+                    .catch(err => {
+                        console.log('Error getting documents', err);
+                    });
+                
             }
         },
 }
