@@ -1,10 +1,10 @@
 <template>
 <div>
   <div id="nav">
-    <router-link to="/">Inicio</router-link> |
-    <router-link to="/recibo">Recibo Actual</router-link> |
-    <router-link to="/recibos">Historial de recibos</router-link> |
-    <router-link to="/estado">Estado del servicio</router-link> 
+    <router-link v-if="$route.path != '/'" to="/recibo">Recibo Actual</router-link> <hr>
+    <router-link v-if="$route.path != '/'" to="/recibos">Historial de recibos</router-link> <hr>
+    <router-link v-if="$route.path != '/'" to="/estado">Estado del servicio</router-link> <hr>
+    <router-link v-if="$route.path != '/'" to="/" style="color:crimson">Cerrar Sesion</router-link> <hr>
   </div>
   <router-view/>
 </div>
