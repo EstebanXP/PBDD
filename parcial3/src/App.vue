@@ -1,6 +1,7 @@
 <template>
 <div>
   <div id="nav">
+    <img src="../logo.png" alt=""> <hr>
     <router-link v-if="$route.path != '/'" to="/recibo">Recibo Actual</router-link> <hr>
     <router-link v-if="$route.path != '/'" to="/recibos">Historial de recibos</router-link> <hr>
     <router-link v-if="$route.path != '/'" to="/estado">Estado del servicio</router-link> <hr>
@@ -16,7 +17,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #1f75b9;
 }
 
 #nav {
@@ -25,10 +26,10 @@
 
 #nav a {
   font-weight: bold;
-  color: #2c3e50;
+  color:#135a92;
 }
 
 #nav a.router-link-exact-active {
-  color: #42b983;
+  color: #0e436d;
 }
 </style>
