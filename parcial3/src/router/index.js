@@ -12,20 +12,20 @@ const routes = [
     //inicio de sesion
   },
   {
-    path: '/recibos',
+    path: '/recibos/:id',
     name: 'recibos',
     component: historialRecibos
     //mostrar todos los recibos
 
   },
   {
-    path: '/recibo',
+    path: '/recibo/:id',
     name: 'recibo',
     component: recibo
     //mostrar el recibo actual
   },
   {
-    path: '/estado',
+    path: '/estado/:id',
     name: 'estado',
     component: status
     //añadir usuario y direccion
