@@ -2,10 +2,12 @@
     <div>
         <h1>Ingresa a tu cuenta</h1>
         <form @submit.prevent="contra">
-            <input type="text" v-model="contrato" style="margin-bottom: 20px">
+            <p>Numero de Contrato</p>
+            <input type="text" v-model="contrato" style="margin-bottom: 20px" required> 
             <hr  style="border:0px"/>
             <button type="submit">Ingresar</button>
         </form>
+        <h1>{{warningContrato}}</h1>
     </div>
 </template>
 
@@ -20,7 +22,8 @@ export default {
             return {
             usuarios: [],
             contrato: '',
-            idUsuario: ''
+            idUsuario: '',
+            warningContrato: ''
             }
         },
         created(){
@@ -34,6 +37,7 @@ export default {
                     .then(snapshot => {
                         if (snapshot.empty) {
                             console.log('No matching documents.');
+                            this.warningContrato='No existe ese numero de contrato'
                             return;
                         }
                         else{
@@ -42,13 +46,14 @@ export default {
                                 this.idUsuario=doc.id;
                             });
                             console.log(this.idUsuario)
-                            router.push("/recibos")
+                            router.push("/recibos/this.idUsuario")
                             
                         }
                         
                     })
                     .catch(err => {
                         console.log('Error getting documents', err);
+                        this.warningContrato='Error. Intente de nuevo mas tarde, si el problema persiste contacte a su sucursal'
                     });
                 
             }
