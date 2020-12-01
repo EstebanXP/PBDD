@@ -1,24 +1,27 @@
 
 <template>
     <div>
-        <h1>
+        <h3>
             Todos los recibos
             <ul>
-            <li v-for="rec in recibos" :key="rec.id">
-            
-            Recibo pagado:
-            {{rec.Pagado}}
-            Saldo Pagado: {{rec.Saldo}} 
-            Watts Usados en el semestre: {{rec.Wattage}}
-            </li>
-            
+                <li v-for="rec in recibos" :key="rec.id">
+                
+                Recibo pagado:
+                {{rec.Pagado}}
+                Saldo Pagado: {{rec.Saldo}} 
+                Watts Usados en el semestre: {{rec.Wattage}}
+                </li>
             </ul>
-        </h1>
+        </h3>
+        <form @submit.prevent="exit">
+            <button type="submit">Cerrar Sesión</button>
+        </form>
     </div>
 </template>
 
 <script>
 import {db} from '../firebase.js'
+import router from '../router'
 export default {
     name: "historialRecibo",
 
@@ -67,7 +70,11 @@ export default {
                         console.log('Error getting documents', err);
                     });
                 
-        }       
+        },
+        exit(){
+            router.push('/')
+        },       
     },
+    
 }
 </script>

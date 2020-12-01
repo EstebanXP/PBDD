@@ -1,13 +1,13 @@
 <template>
     <div>
-        <h1>Ingresa a tu cuenta</h1>
+        <h1>Bienvenido a CME Online</h1>
         <form @submit.prevent="contra">
             <p>Numero de Contrato</p>
             <input type="text" v-model="contrato" style="margin-bottom: 20px" required> 
             <hr  style="border:0px"/>
             <button type="submit">Ingresar</button>
         </form>
-        <h1>{{warningContrato}}</h1>
+        <h2 style="color:crimson">{{warningContrato}}</h2>
     </div>
 </template>
 

@@ -3,12 +3,20 @@
         <h1>
             Recibo actual
         </h1>
+        <form @submit.prevent="cerrarSesion">
+            <button type="submit">Cerrar Sesión</button>
+        </form>
     </div>
 </template>
 
 <script>
 import {db} from '../firebase.js'
+import router from '../router'
 export default {
+    cerrarSesion(){
+        
+        router.push("/")
+    },
     name: "recibo",
     data(){
         return{
@@ -28,15 +36,12 @@ export default {
 
             // It will also get fired again if one of the first two dinosaurs is
             // removed from the data set, as a new dinosaur will now be the second
-        // shortest.
+            // shortest.
             console.log(snapshot.key);
-        });
-
-
-
-
-        }       
+            });
+        }
     },
+    
 }
 </script>
 
