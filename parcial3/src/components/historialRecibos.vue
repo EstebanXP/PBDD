@@ -27,10 +27,10 @@
                 </li>
             </ul>
         <form @submit.prevent="mostrarRecibos">
-            <button type="submit">Mostrar Recibos</button>
+            <button type="submit" >Mostrar Recibos</button>
         </form>
         <form @submit.prevent="exit">
-            <button type="submit">Cerrar Sesión</button>
+            <button type="submit" onClick="document.location.reload(true)">Cerrar Sesión 1</button>
         </form>
         
     </div>
@@ -48,7 +48,7 @@ export default {
             recibos: [],
             noRecibos: [],
             status: true,
-            id : this.$route.params.id,
+            id : "",
             recAux:[],
         }   
         
@@ -115,9 +115,12 @@ export default {
                         console.log('Error getting documents', err);
                     });
             }    
+            
         },
         mostrar: function(){
+            
             let accs = this.$route.params.id;
+            
             this.status=!this.status;
             db.collection('Usuario').doc(accs).update({Status:this.status});
         },
@@ -151,7 +154,11 @@ export default {
 
        },
         exit(){
+            
+            
             router.push('/');
+            location.reload();
+            
         },       
     },
 }

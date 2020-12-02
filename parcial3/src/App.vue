@@ -2,7 +2,7 @@
 <div>
   <div id="nav">
     <img src="../logo.png" alt=""> <hr>
-    <router-link v-if="$route.path != '/'" to="/" style="color:crimson">Cerrar Sesion</router-link> <hr>
+    <router-link v-if="$route.path != '/'" to="/" style="color:crimson" onclick="location.reload();">Cerrar Sesion</router-link> <hr>
   </div>
   <router-view/>
 </div>
