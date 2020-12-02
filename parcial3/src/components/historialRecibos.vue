@@ -114,9 +114,9 @@ export default {
             this.status=!this.status;
             
             },
-        }
+        },
         exit(){
-            router.push('/')
+            router.push('/');
         },       
     },
     
