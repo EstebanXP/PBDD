@@ -3,7 +3,7 @@
         <h1>
             
             Recibo actual
-            {{recAux.FechaPago}}
+           
             {{regresarFecha(recAux.FechaPago)}}
         </h1>
         <form @submit.prevent="cerrarSesion">
@@ -59,9 +59,9 @@ export default {
         },
         regresarFecha(segs){
             console.log(segs);
-           var d = new Date(null);
-           d.setTime(segs*1000);
-           console.log(d);
+           var d = new Date();
+           d.setTime(1605596400*1000);
+           
            return d;
        }
     },
