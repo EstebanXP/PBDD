@@ -118,14 +118,8 @@ export default {
         },
         mostrar: function(){
             let accs = this.$route.params.id;
-            
             this.status=!this.status;
             db.collection('Usuario').doc(accs).update({Status:this.status});
-            
-            
-            
-             
-             
         },
         async mostrarUltimoRecibo(){ //este. acano jjsjsjs x2
            
