@@ -2,9 +2,6 @@
 <div>
   <div id="nav">
     <img src="../logo.png" alt=""> <hr>
-    <router-link v-if="$route.path != '/'" to="/recibo">Recibo Actual</router-link> <hr>
-    <router-link v-if="$route.path != '/'" to="/recibos">Historial de recibos</router-link> <hr>
-    <router-link v-if="$route.path != '/'" to="/estado">Estado del servicio</router-link> <hr>
     <router-link v-if="$route.path != '/'" to="/" style="color:crimson">Cerrar Sesion</router-link> <hr>
   </div>
   <router-view/>

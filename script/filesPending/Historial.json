@@ -1,0 +1,27 @@
+[
+    {
+        "itemID" : "01",
+        "CME_CLIE_01": ["CME_TICKET_01",
+                        "CME_TICKET_02",
+                        "CME_TICKET_03",
+                        "CME_TICKET_04",
+                        "CME_TICKET_05",
+                        "CME_TICKET_06",
+                        "CME_TICKET_07",
+                        "CME_TICKET_08",
+                        "CME_TICKET_09"]
+    },
+    {
+        "itemID": "02",
+        "CME_CLIE_02": ["CME_TICKET_10",
+                        "CME_TICKET_11",
+                        "CME_TICKET_12",
+                        "CME_TICKET_13",
+                        "CME_TICKET_14",
+                        "CME_TICKET_15",
+                        "CME_TICKET_16",
+                        "CME_TICKET_17",
+                        "CME_TICKET_18"]
+    }
+  ]
+  

@@ -26,8 +26,7 @@ export default {
             warningContrato: ''
             }
         },
-        created(){
-            
+        created(){ 
         },
     methods: {
             contra(){

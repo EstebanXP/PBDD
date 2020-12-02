@@ -1,0 +1,43 @@
+[
+    {
+      "itemID": "CME_DOM_01",
+      "ClienteID": "CME_CLIE_01",
+      "Calle" : "Flores Magon",
+      "NumeroDeCasa" : "2185",
+      "Colonia": "San Antonio",
+      "CodigoPostal": "31540",
+      "Ciudad": "Chihuahua",
+      "Estado": "Chihuahua"
+    },
+    {
+      "itemID": "CME_DOM_02",
+      "ClienteID": "CME_CLIE_02",
+      "Calle" : "Villa de Antares",
+      "NumeroDeCasa" : "5382",
+      "Colonia": "Campobello",
+      "CodigoPostal": "31340",
+      "Ciudad": "Chihuahua",
+      "Estado": "Chihuahua"
+    },
+    {
+      "itemID": "CME_DOM_03",
+      "ClienteID": "CME_CLIE_03",
+      "Calle" : "Independencia",
+      "NumeroDeCasa" : "1003",
+      "Colonia": "Centro",
+      "CodigoPostal": "31230",
+      "Ciudad": "Chihuahua",
+      "Estado": "Chihuahua"
+    },
+    {
+      "itemID": "CME_DOM_04",
+      "ClienteID": "CME_CLIE_04",
+      "Calle" : "Universidad",
+      "NumeroDeCasa" : "4378",
+      "Colonia": "Industrial",
+      "CodigoPostal": "32670",
+      "Ciudad": "Chihuahua",
+      "Estado": "Chihuahua"
+    }
+  ]
+  

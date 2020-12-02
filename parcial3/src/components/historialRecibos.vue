@@ -20,10 +20,10 @@
            <h2>Todos los recibos</h2> 
             <ul>
                 <li v-for="rec in recibos" :key="rec.id">
-                <p class="pListas">Recibo pagado:</p>{{rec.Pagado}} <hr/>
+                <p class="pListas">Recibo pagado:</p><p v-if="rec.Pagado == true">Pagado</p><p v-if="rec.Pagado != true">No Pagado</p><hr/>
                 <p class="pListas">Saldo Pagado:</p> {{rec.Saldo}} <hr>
                 <p class="pListas">Watts Usados en el semestre:</p> {{rec.Wattage}}<hr>
-                <p class="pListas">Fecha</p> <p>{{rec.FechaPago}}</p>
+                <p class="pListas">Fecha</p> <p>{{regresarFecha(rec.FechaPago.toDate())}}</p>
                 </li>
             </ul>
         <form @submit.prevent="mostrarRecibos">
@@ -56,7 +56,7 @@ export default {
     created() {
         this.getRecibosNo();
         this.mostrarUltimoRecibo();
-        //this.mostrarRecibos();
+        
     },
     methods: {
         
@@ -149,16 +149,11 @@ export default {
         regresarFecha(segs){
             return moment(segs).format("DD/MM/YY");
 
-       }
-    
-    
-    
-    
-    //Aqui termina metodos
-    },
+       },
         exit(){
             router.push('/');
         },       
-    }
+    },
+}
     
 </script>

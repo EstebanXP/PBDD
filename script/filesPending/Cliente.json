@@ -1,0 +1,31 @@
+[
+    {
+      "itemID": "CME_CLIE_01",
+      "Apellido" : "Zihuatanejo",
+      "Nombre" : "Juan",
+      "RFC" : "CUPU800825569",
+      "Telefono" : "6145690876"
+    },
+    {
+        "itemID": "CME_CLIE_02",
+        "Apellido" : "Perez",
+        "Nombre" : "Ricardo",
+        "RFC" : "RIPU800845469",
+        "Telefono" : "6145782452"
+      },
+      {
+        "itemID": "CME_CLIE_03",
+        "Apellido" : "Nava",
+        "Nombre" : "Esteban",
+        "RFC" : "NAES700824579",
+        "Telefono" : "6144869024"
+      },
+      {
+        "itemID": "CME_CLIE_04",
+        "Apellido" : "Kevin",
+        "Nombre" : "Lastra",
+        "RFC" : "KLUP700853669",
+        "Telefono" : "6145692193"
+      }
+  ]
+  

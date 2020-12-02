@@ -1,0 +1,19 @@
+[
+    {
+      "itemID": "CME_SUC_01",
+      "NombreSucursal" : "Sucursal Norte",
+      "Ubicación" : "Colonia Campobello"
+    },
+    {
+        "itemID": "CME_SUC_02",
+        "NombreSucursal" : "Sucursal Sur",
+        "Ubicación" : "Colonia Centro"
+      },
+      {
+        "itemID": "CME_SUC_03",
+        "NombreSucursal" : "Sucursal Delicias",
+        "Ubicación" : "Delicias"
+      }
+
+  ]
+  

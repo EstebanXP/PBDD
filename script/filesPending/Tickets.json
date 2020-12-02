@@ -1,0 +1,129 @@
+[
+    {
+        "itemID": "CME_TICKET_01",
+        "Saldo" : "345",
+        "FechaPago" : 1606880779,
+        "Wattage" : "23",
+        "Pagado" : false
+    },
+    {
+        "itemID": "CME_TICKET_02",
+        "Saldo" : "500",
+        "FechaPago" :  1601610379,
+        "Wattage" : "30",
+        "Pagado" : true
+    },
+    {
+        "itemID": "CME_TICKET_03",
+        "Saldo" : "300",
+        "FechaPago" : 1596339979,
+        "Wattage" : "20",
+        "Pagado" : true
+    },
+    {
+        "itemID": "CME_TICKET_04",
+        "Saldo" : "320",
+        "FechaPago" : 1591069579,
+        "Wattage" : "27",
+        "Pagado" : true
+    },
+    {
+        "itemID": "CME_TICKET_05",
+        "Saldo" : "300",
+        "FechaPago" : 1585799179,
+        "Wattage" : "20",
+        "Pagado" : true
+    },
+    {
+        "itemID": "CME_TICKET_06",
+        "Saldo" : "345",
+        "FechaPago" : 1580615179,
+        "Wattage" : "23",
+        "Pagado" : true
+    },
+    {
+        "itemID": "CME_TICKET_07",
+        "Saldo" : "520",
+        "FechaPago" : 1575258379,
+        "Wattage" : "40",
+        "Pagado" : true
+    },
+    {
+        "itemID": "CME_TICKET_08",
+        "Saldo" : "400",
+        "FechaPago" : 1569987979,
+        "Wattage" : "28",
+        "Pagado" : true
+    },
+    {
+        "itemID": "CME_TICKET_09",
+        "Saldo" : "300",
+        "FechaPago" : 1564717579,
+        "Wattage" : "20",
+        "Pagado" : true
+    },
+    {
+        "itemID": "CME_TICKET_10",
+        "Saldo" : "345",
+        "FechaPago" : 1606880779,
+        "Wattage" : "23",
+        "Pagado" : false
+    },
+    {
+        "itemID": "CME_TICKET_11",
+        "Saldo" : "300",
+        "FechaPago" :  1601610379,
+        "Wattage" : "20",
+        "Pagado" : true
+    },
+    {
+        "itemID": "CME_TICKET_12",
+        "Saldo" : "300",
+        "FechaPago" : 1596339979,
+        "Wattage" : "20",
+        "Pagado" : true
+    },
+    {
+        "itemID": "CME_TICKET_13",
+        "Saldo" : "380",
+        "FechaPago" : 1591069579,
+        "Wattage" : "25",
+        "Pagado" : true
+    },
+    {
+        "itemID": "CME_TICKET_14",
+        "Saldo" : "345",
+        "FechaPago" : 1585799179,
+        "Wattage" : "23",
+        "Pagado" : true
+    },
+    {
+        "itemID": "CME_TICKET_15",
+        "Saldo" : "400",
+        "FechaPago" : 1580615179,
+        "Wattage" : "28",
+        "Pagado" : true
+    },
+    {
+        "itemID": "CME_TICKET_16",
+        "Saldo" : "288",
+        "FechaPago" : 1575258379,
+        "Wattage" : "18",
+        "Pagado" : true
+    },
+    {
+        "itemID": "CME_TICKET_17",
+        "Saldo" : "345",
+        "FechaPago" : 1569987979,
+        "Wattage" : "23",
+        "Pagado" : true
+    },
+    {
+        "itemID": "CME_TICKET_18",
+        "Saldo" : "300",
+        "FechaPago" : 1564717579,
+        "Wattage" : "20",
+        "Pagado" : true
+    }
+  ]
+  

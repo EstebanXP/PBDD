@@ -1,0 +1,26 @@
+[
+  {
+    "itemID": "CME_CLIE_01",
+    "SucursalID" : "CME_SUC_02",
+    "noContrato" : "CME_CONT_01",
+    "Status" : true
+  },
+  {
+    "itemID": "CME_CLIE_02",
+    "SucursalID" : "CME_SUC_02",
+    "noContrato" : "CME_CONT_02",
+    "Status" : true
+  },
+  {
+    "itemID": "CME_CLIE_03",
+    "SucursalID" : "CME_SUC_01",
+    "noContrato" : "CME_CONT_03",
+    "Status" : false
+  },
+  {
+    "itemID": "CME_CLIE_04",
+    "SucursalID" : "CME_SUC_03",
+    "noContrato" : "CME_CONT_04",
+    "Status" : false
+  }
+]
