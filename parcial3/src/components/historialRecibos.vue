@@ -26,12 +26,13 @@
                 <p class="pListas">Fecha</p> <p>{{rec.FechaPago}}</p>
                 </li>
             </ul>
-        <form @submit.prevent="exit">
-            <button type="submit">Cerrar Sesión</button>
-        </form>
         <form @submit.prevent="mostrarRecibos">
             <button type="submit">Mostrar Recibos</button>
         </form>
+        <form @submit.prevent="exit">
+            <button type="submit">Cerrar Sesión</button>
+        </form>
+        
     </div>
 </template>
 
@@ -54,6 +55,7 @@ export default {
     },
     created() {
         this.getRecibosNo();
+        this.mostrarUltimoRecibo();
         //this.mostrarRecibos();
     },
     methods: {
@@ -143,8 +145,6 @@ export default {
                     });
         },
         regresarFecha(segs){
-            // eslint-disable-next-line no-unused-vars
-            //const fecha = firestore.Timestamp(d).getSeconds()
             return moment(segs).format("DD/MM/YY");
 
        }
