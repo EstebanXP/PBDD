@@ -2,6 +2,7 @@
 <template>
     <div>
          <h1>
+            {{regresarFecha(recAux.FechaPago.toDate())}}
             Iniciar servicio 
             {{status}}
             <br>
@@ -37,6 +38,7 @@
 <script>
 import {db} from '../firebase.js'
 import router from '../router'
+import moment from 'moment'
 export default {
     name: "historialRecibo",
 
@@ -46,6 +48,7 @@ export default {
             noRecibos: [],
             status: true,
             id : this.$route.params.id,
+            recAux:[],
         }   
         
     },
@@ -114,11 +117,41 @@ export default {
             this.status=!this.status;
             
             },
+        async mostrarUltimoRecibo(){ //este. acano jjsjsjs x2
+           
+           let ref = db.collection("Tickets")
+           // eslint-disable-next-line no-unused-vars
+           const orden=ref.orderBy("FechaPago").limit(1).get()
+            .then(snapshot => {
+                        if (snapshot.empty) {
+                            console.log('No matching documents.');
+                            this.warningContrato='No existe ese numero de contrato'
+                            return;
+                        }
+                        else{
+                            snapshot.forEach(doc => {
+                                console.log(doc.id, '=>', doc.data());
+                                this.recAux=doc.data();
+                            });
+                            
+                        }
+                        
+                    })
+                    .catch(err => {
+                        console.log('Error getting documents', err);
+                        
+                    });
         },
+        regresarFecha(segs){
+            // eslint-disable-next-line no-unused-vars
+            //const fecha = firestore.Timestamp(d).getSeconds()
+            return moment(segs).format("DD/MM/YY");
+
+       }
+    },
         exit(){
             router.push('/');
         },       
-    },
+    }
     
-}
 </script>
