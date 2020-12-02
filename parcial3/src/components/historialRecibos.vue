@@ -33,13 +33,6 @@ export default {
     methods: {
         async mostrarRecibos(){ //esta. acano jjsjsjs
         
-          //console.log("jala")
-            
-            //const recibos1 = db.collection("Tickets")
-            //console.log("jala")
-            //this.recibos= recibos1.docs.map(doc => ({id: doc.id,...doc.data()}))
-            //console.log("jala")
-            //console.log(this.recibos);
             var i=0;
             var recibos1= db.collection("Tickets");
             var consulta= recibos1.where("Pagado", '!=', null).get()

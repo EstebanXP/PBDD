@@ -29,28 +29,27 @@ export default {
     },
     methods: {
         async mostrarUltimoRecibo(){ //este. acano jjsjsjs x2
-           var i=0;
+           
            let ref = db.collection("Tickets")
-           var orden=ref.orderBy("FechaPago").limitToFirst(1)
-            .then(snapshot=>{
-                    if(snapshot.empty){
-                        alert("Tabla vacia!");
-                        return
-                    }else{
-                        console.log(orden);
-                    }
-                 
-                   i=0;
-                 
-                    snapshot.forEach(doc=>{
-                        console.log(doc.id,"=>",doc.data());
-                        this.recibos[i]=doc.data()
-                        i++;
+           // eslint-disable-next-line no-unused-vars
+           const orden=ref.orderBy("FechaPago").limit(1).get()
+            .then(snapshot => {
+                        if (snapshot.empty) {
+                            console.log('No matching documents.');
+                            this.warningContrato='No existe ese numero de contrato'
+                            return;
+                        }
+                        else{
+                            snapshot.forEach(doc => {
+                                console.log(doc.id, '=>', doc.data());
+                            });
+                            
+                        }
+                        
                     })
-                    
-               })
-                .catch(err => {
+                    .catch(err => {
                         console.log('Error getting documents', err);
+                        
                     });
             
         }
