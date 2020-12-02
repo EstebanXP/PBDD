@@ -1,7 +1,10 @@
 <template>
     <div>
         <h1>
+            
             Recibo actual
+            {{recAux.FechaPago}}
+            {{regresarFecha(recAux.FechaPago)}}
         </h1>
         <form @submit.prevent="cerrarSesion">
             <button type="submit">Cerrar Sesión</button>
@@ -21,6 +24,7 @@ export default {
     data(){
         return{
             recAux:[],
+            
         }
         
     },
@@ -42,6 +46,7 @@ export default {
                         else{
                             snapshot.forEach(doc => {
                                 console.log(doc.id, '=>', doc.data());
+                                this.recAux=doc.data();
                             });
                             
                         }
@@ -51,8 +56,14 @@ export default {
                         console.log('Error getting documents', err);
                         
                     });
-            
-        }
+        },
+        regresarFecha(segs){
+            console.log(segs);
+           var d = new Date(null);
+           d.setTime(segs*1000);
+           console.log(d);
+           return d;
+       }
     },
     
 }
