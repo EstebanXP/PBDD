@@ -29,16 +29,30 @@ export default {
     },
     methods: {
         async mostrarUltimoRecibo(){ //este. acano jjsjsjs x2
-           var ref = db.database().ref("Tickets");
-            ref.orderByChild("FechaPago").limitToFirst(1).on("child_added", function(snapshot) {
-            // This will be called exactly two times (unless there are less than two
-            // dinosaurs in the Database).
-
-            // It will also get fired again if one of the first two dinosaurs is
-            // removed from the data set, as a new dinosaur will now be the second
-            // shortest.
-            console.log(snapshot.key);
-            });
+           var i=0;
+           let ref = db.collection("Tickets")
+           var orden=ref.orderBy("FechaPago").limitToFirst(1)
+            .then(snapshot=>{
+                    if(snapshot.empty){
+                        alert("Tabla vacia!");
+                        return
+                    }else{
+                        console.log(orden);
+                    }
+                 
+                   i=0;
+                 
+                    snapshot.forEach(doc=>{
+                        console.log(doc.id,"=>",doc.data());
+                        this.recibos[i]=doc.data()
+                        i++;
+                    })
+                    
+               })
+                .catch(err => {
+                        console.log('Error getting documents', err);
+                    });
+            
         }
     },
     
