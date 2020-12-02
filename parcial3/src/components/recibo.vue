@@ -4,7 +4,7 @@
             
             Recibo actual
             {{recAux.FechaPago}}
-            {{regresarFecha(recAux.FechaPago)}}
+            {{regresarFecha(recAux.FechaPago.toDate())}}
         </h1>
         <form @submit.prevent="cerrarSesion">
             <button type="submit">Cerrar Sesión</button>
@@ -15,6 +15,8 @@
 <script>
 import {db} from '../firebase.js'
 import router from '../router'
+import moment from 'moment';
+//import { firestore } from 'firebase';
 export default {
     cerrarSesion(){
         
@@ -59,10 +61,9 @@ export default {
         },
         regresarFecha(segs){
             console.log(segs);
-           var d = new Date(null);
-           d.setTime(segs*1000);
-           console.log(d);
-           return d;
+            // eslint-disable-next-line no-unused-vars
+            //const fecha = firestore.Timestamp(d).getSeconds()
+            return moment(segs).format("DD/MM/YY");
        }
     },
     
