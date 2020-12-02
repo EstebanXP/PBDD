@@ -1,12 +1,28 @@
 
 <template>
     <div>
+         <h1>
+            Iniciar servicio 
+            {{status}}
+            <br>
+            
+            <div v-if="!status">
+                <img src="../imagenes/focoOff.png">
+            </div>
+            <div v-else>
+                <img src="../imagenes/focoOn.png">
+            </div>
+            <br>
+            <button v-on:click="mostrar()">Estado</button>
+            
+            </h1>
            <h2>Todos los recibos</h2> 
             <ul>
                 <li v-for="rec in recibos" :key="rec.id">
                 <p class="pListas">Recibo pagado:</p>{{rec.Pagado}} <hr/>
                 <p class="pListas">Saldo Pagado:</p> {{rec.Saldo}} <hr>
                 <p class="pListas">Watts Usados en el semestre:</p> {{rec.Wattage}}<hr>
+                <p class="pListas">Fecha</p> <p>{{rec.FechaPago}}</p>
                 </li>
             </ul>
         <form @submit.prevent="exit">
@@ -28,7 +44,7 @@ export default {
         return{
             recibos: [],
             noRecibos: [],
-            index : 9,
+            status: true,
             id : this.$route.params.id,
         }   
         
@@ -70,7 +86,7 @@ export default {
             var recibos1= db.collection("Tickets");
             let e=0
             
-            for(e;e<this.index;e++){
+            for(e in this.noRecibos){
                  var consulta= recibos1.where("itemID", '==', this.noRecibos[e])
                 await consulta.get()
             //this.recibos=consulta.docs.map(doc => ({id: doc.id,...doc.data()}))
@@ -91,11 +107,14 @@ export default {
                 .catch(err => {
                         console.log('Error getting documents', err);
                     });
-            }
-        
-           
-              
+            }    
         },
+        mostrar: function(){
+            console.log("Hola mundo");
+            this.status=!this.status;
+            
+            },
+        }
         exit(){
             router.push('/')
         },       
