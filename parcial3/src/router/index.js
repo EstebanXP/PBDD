@@ -12,7 +12,7 @@ const routes = [
     //inicio de sesion
   },
   {
-    path: '/recibos', //'/recibos/:id',
+    path: '/recibos/:id', //'/recibos/:id',
     name: 'recibos',
     component: historialRecibos
     //mostrar todos los recibos

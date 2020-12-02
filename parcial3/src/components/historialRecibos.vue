@@ -1,7 +1,7 @@
 
 <template>
     <div>
-            Todos los recibos
+           <h2>Todos los recibos</h2> 
             <ul>
                 <li v-for="rec in recibos" :key="rec.id">
                 <p class="pListas">Recibo pagado:</p>{{rec.Pagado}} <hr/>
@@ -11,6 +11,9 @@
             </ul>
         <form @submit.prevent="exit">
             <button type="submit">Cerrar Sesión</button>
+        </form>
+        <form @submit.prevent="mostrarRecibos">
+            <button type="submit">Mostrar Recibos</button>
         </form>
     </div>
 </template>
@@ -24,19 +27,52 @@ export default {
     data(){
         return{
             recibos: [],
-        }
+            noRecibos: [],
+            index : 9,
+            id : this.$route.params.id,
+        }   
         
     },
     created() {
-        this.mostrarRecibos();
+        this.getRecibosNo();
+        //this.mostrarRecibos();
     },
     methods: {
-        async mostrarRecibos(){ //esta. acano jjsjsjs
         
-            var i=0;
-            var recibos1= db.collection("Tickets");
-            var consulta= recibos1.where("Pagado", '!=', null).get()
+        async getRecibosNo(){
+            // eslint-disable-next-line no-unused-vars
+            let accs = this.$route.params.id;
+            
+            var historialCollection= db.collection("Historial/");
+            var consultaArreglos= historialCollection.where(this.$route.params.id, '!=', null)
+            .get()
+                .then(snapshot=>{
+                    if(snapshot.empty){
+                        alert("Tabla vacia!");
+                        return
+                    }else{
+                        console.log(consultaArreglos);
+                    }
+                    snapshot.forEach(doc=>{
+                        console.log(doc.data()[accs]);
+                        this.noRecibos=doc.data()[accs]
+                        console.log(this.noRecibos)
 
+                    })
+                    
+               })
+                .catch(err => {
+                        console.log('Error getting documents', err);
+                    });
+                
+        },
+        async mostrarRecibos(){ //esta. acano jjsjsjs
+            var recibos1= db.collection("Tickets");
+            let e=0
+            
+            for(e;e<this.index;e++){
+                 var consulta= recibos1.where("itemID", '==', this.noRecibos[e])
+                await consulta.get()
             //this.recibos=consulta.docs.map(doc => ({id: doc.id,...doc.data()}))
                 .then(snapshot=>{
                     if(snapshot.empty){
@@ -45,20 +81,20 @@ export default {
                     }else{
                         console.log(consulta);
                     }
-                 
-                   i=0;
-                 
                     snapshot.forEach(doc=>{
                         console.log(doc.id,"=>",doc.data());
-                        this.recibos[i]=doc.data()
-                        i++;
+                        this.recibos[e]=doc.data()
+                        
                     })
                     
                })
                 .catch(err => {
                         console.log('Error getting documents', err);
                     });
-                
+            }
+        
+           
+              
         },
         exit(){
             router.push('/')

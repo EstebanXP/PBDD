@@ -46,7 +46,7 @@ export default {
                                 this.idUsuario=doc.id;
                             });
                             console.log(this.idUsuario)
-                            router.push("/recibos/this.idUsuario")
+                            router.push("/recibos/" + this.idUsuario)
                             
                         }
                         
