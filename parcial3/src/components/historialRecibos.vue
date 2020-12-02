@@ -88,7 +88,9 @@ export default {
                 
         },
         async mostrarRecibos(){ //esta. acano jjsjsjs
+            
             var recibos1= db.collection("Tickets");
+            
             let e=0
             
             for(e in this.noRecibos){
@@ -115,10 +117,16 @@ export default {
             }    
         },
         mostrar: function(){
-            console.log("Hola mundo");
-            this.status=!this.status;
+            let accs = this.$route.params.id;
             
-            },
+            this.status=!this.status;
+            db.collection('Usuario').doc(accs).update({Status:this.status});
+            
+            
+            
+             
+             
+        },
         async mostrarUltimoRecibo(){ //este. acano jjsjsjs x2
            
            let ref = db.collection("Tickets")
@@ -148,6 +156,11 @@ export default {
             return moment(segs).format("DD/MM/YY");
 
        }
+    
+    
+    
+    
+    //Aqui termina metodos
     },
         exit(){
             router.push('/');
