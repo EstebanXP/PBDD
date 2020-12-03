@@ -2,9 +2,16 @@
 <template>
     <div>
          <h1>
+            <p class="pListas">Ultimo Recibo:</p>
             {{regresarFecha(recAux.FechaPago.toDate())}}
-            Iniciar servicio 
-            {{status}}
+            <p class="pListas">Wattage:</p>
+            {{recAux.Wattage}}
+            <p class="pListas">Saldo a pagar:</p>
+            {{recAux.Saldo}}
+            <p class="pListas">Pagado:</p>
+            <p v-if="recAux.FechaPago == true">Pagado</p><p v-if="recAux.FechaPago != true">No</p><hr/>
+            <p class="pQuerie" v-if="status!= true">Se solicito la baja del sistema</p><hr/>
+            <p class="pQuerie" v-if="status== true">Servicio activo</p><hr/>
             <br>
             
             <div v-if="!status">
@@ -28,9 +35,6 @@
             </ul>
         <form @submit.prevent="mostrarRecibos">
             <button type="submit" >Mostrar Recibos</button>
-        </form>
-        <form @submit.prevent="exit">
-            <button type="submit" onClick="document.location.reload(true)">Cerrar Sesión 1</button>
         </form>
         
     </div>
